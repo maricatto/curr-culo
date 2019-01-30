@@ -1,0 +1,2 @@
+O objetivo deste projeto era a elaboração de um currículo utilizando somente HTML,CSS e Javascript. O currículo deveria preencher dois campos via JSON sem a utilização de REACT,JQUERY e outros frameworks, contudo foi concedido a oportunidade de utilizar um mock pelo site "https://www.mockable.io/".
+Para se testar o projeto deve-se fazer o download do repositório e ter os programas necessários para visulização correta e completa do site.
