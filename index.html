@@ -6,17 +6,12 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
-   <script>
-        function trocatema(){
-        document.getElementById("teste").style.backgroundColor="dimgray";
-        document.getElementById("teste").style.color="white";
-        }
-   </script>
 </head>
 <body>
+  <button id="button1">Carrega Empresa</button>
     <button onclick="javascript:trocatema();">Clique para trocar o tema do currículo</button>
-  <div id="teste" class="container">
-    
+  <div id="teste" class="container">    
+   
     <section><!--Informações Pessoais-->
       <div>
         <div><img src="img/scorpion.jpg" alt="avatar" class="avatar"></div>
@@ -36,7 +31,7 @@
 
     <section><!--Experiência Profissional-->
             <div class="section-title">Experiência Profissional</div>
-            <div>
+            <div id="company">
               <div class="emprego">
                 <div class="cargo-container">
                   <div>
@@ -106,5 +101,22 @@
                         </ul>
                             </div>
               </section><!--Fim dos Interesse Pessoais-->
+               <script src="trocacor.js"></script>
+               
+               <script>
+               document.getElementById('button1').addEventListener('click',loadempresa);
+                
+               function loadempresa(){
+                  var xhr=new XMLHttpRequest();
+                  xhr.open('GET','empresa.json', true);
+                  
+                  xhr.onload=function(){
+                    if(this.status == 200) {
+                      console.log(this.responseText);
+                  }
+                }
+                xhr.send();
+                }
+            </script>
 </body>
 </html>
