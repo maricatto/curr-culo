@@ -1,151 +1,146 @@
-  body {
-    font-family: 'Ubuntu', sans-serif;
-    line-height: 1.5;
-    background: #F2F2F2;
-    color: #323232;
-  }
-  button{
-      margin-left: 40em;
-      margin-top: 20px;
-  }
-  #teste{
-    background-color:white;
-    color:dimgray;
-    font-weight:500;
-  }
-h6{
-    font-weight: 600;
-    text-align: center;
+body {
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.5;
+  background: #F2F2F2;
+  color: #323232;
 }
- 
-  .container {
-    max-width: 960px;
-    margin: 40px auto;
-    padding: 32px;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  section {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid lightgrey;
-  }
-  
+button{
+    margin-left: 40em;
+    margin-top: 20px;
+}
+#teste{
+  background-color:white;
+  color:dimgray;
+  font-weight:500;
+}
+h6{
+  font-weight: 600;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 32px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid lightgrey;
+}
+
 .section-title {
-    font-weight: bold;
-    font-size: 18px;
-  }
- 
-/***********************************
-  * Dados Pessoais
-  ***********************************/
-  
-  img.avatar {
-    width: 130px;
-  }
-  
-  .nome {
-    font-size: 48px;
-    line-height: 1;
-  }
-  
-  .infpes {
-    display: flex;
-    align-items: center;
-    flex: 1;
-  }
-  
-  /***********************************
-  * Experiência Profissional
-  ***********************************/
-  
-  .emprego {
-    padding-bottom: 24px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid lightgrey;
-  }
-  
-  .cargo-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-  
-  .empresa {
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  
-/***********************************
-  * Formação Profissional
-  ***********************************/
-  
-  .formacao {
-    padding-bottom: 24px;
-    margin-bottom: 24px;
-  }
-  
-  .formacao-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
-  .instituicao {
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  
-  /***********************************
-  * Habilidade Técnica
-  ***********************************/
-  
-  .habilidade-container {
-    display:grid;
-    grid-gap: 5px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  
-  .habilidade-container ul {
-    margin-left: 2px;
-    list-style-type: disc;
-  }
-  /***********************************
-  * Idioma
-  ***********************************/
+  font-weight: bold;
+  font-size: 18px;
+}
 
-  .idioma-container {
-    display:grid;
-    grid-gap: 5px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  
-  .idioma-container ul {
-    margin-left: 2px;
-    list-style-type: disc;
-  }
 /***********************************
-  * Interesse Profissional
-  ***********************************/
+* Dados Pessoais
+***********************************/
 
-  .interesse-container {
-    display:grid;
-    grid-gap: 5px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  
-  .interesse-container ul {
-    margin-left: 18px;
-    list-style-type: disc;
-  }
+img.avatar {
+  width: 130px;
+}
+
+.nome {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.infpes {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/***********************************
+* Experiência Profissional
+***********************************/
+
+#Empresas {
+  font-size: 18px;
+}
+#Empresas li:nth-child(4){
+  border-bottom: 1px solid lightgrey;
+}
+#Empresas li:nth-child(8){
+  border-bottom: 1px solid lightgrey;
+}
+/***********************************
+* Formação Profissional
+***********************************/
+
+.formacao {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.formacao-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.instituicao {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/***********************************
+* Habilidade Técnica
+***********************************/
+
+#skill {
+  font-size: 18px;
+}
+
+#skill li:nth-child(2){
+  border-bottom: 1px solid lightgrey;
+}
+#skill li:nth-child(4){
+  border-bottom: 1px solid lightgrey;
+}
+#skill li:nth-child(6){
+  border-bottom: 1px solid lightgrey;
+}
+#skill li:nth-child(8){
+  border-bottom: 1px solid lightgrey;
+}
+/***********************************
+* Idioma
+***********************************/
+
+.idioma-container {
+  display:grid;
+  grid-gap: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.idioma-container ul {
+  margin-left: 2px;
+  list-style-type: disc;
+}
+/***********************************
+* Interesse Profissional
+***********************************/
+
+.interesse-container {
+  display:grid;
+  grid-gap: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.interesse-container ul {
+  margin-left: 18px;
+  list-style-type: disc;
+}

@@ -8,10 +8,8 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="button1">Carrega Empresa</button>
-    <button onclick="javascript:trocatema();">Clique para trocar o tema do currículo</button>
+   <button onclick="javascript:trocatema();">Clique para trocar o tema do currículo</button>
   <div id="teste" class="container">    
-   
     <section><!--Informações Pessoais-->
       <div>
         <div><img src="img/scorpion.jpg" alt="avatar" class="avatar"></div>
@@ -31,20 +29,7 @@
 
     <section><!--Experiência Profissional-->
             <div class="section-title">Experiência Profissional</div>
-            <div id="company">
-              <div class="emprego">
-                <div class="cargo-container">
-                  <div>
-                    <div class="empresa">Nome da Empresa</div>
-                    <div class="cargo">Cargo</div>
-                  </div>
-                  <div>
-                    Período - 
-                  </div>
-                </div> 
-                <p>Principais atividades Exercidas.<br>
-                    <br> ipsum dolor sit amet, consectetur adipisicing elit. Illum voluptate iure quasi inventore doloremque exercitationem maiores libero corrupti magnam praesentium voluptatem facere optio recusandae sit debitis tenetur beatae, voluptatibus itaque magni, est. Fugiat nostrum nemo fuga nulla modi doloremque maxime.</p>
-              </div> 
+            <ul id="Empresas"></ul>
       </section><!--Fim da Experiência Profissional-->
       
       <section><!--Formação Profissional-->
@@ -53,11 +38,11 @@
               <div class="formacao">
                 <div class="formacao-container">
                   <div>
-                    <div class="instituicao">Nome da Instituicao</div>
-                    <div class="curso">Nome do Curso</div>
+                    <div class="instituicao">Unicesumar</div>
+                    <div class="curso">Análise e Desenvolvimento de Sistemas</div>
                   </div>
                   <div>
-                    Fev 2016 - Jul 2019 
+                    Fev 2018 - Jul 2019 
                   </div>
                 </div> 
               </div> 
@@ -66,24 +51,19 @@
 
       <section><!--Cursos de capacitação-->
             <div class="section-title">Habilidades Técnicas</div>
-            <div>
-              <div class="habilidade-container">
-                <ul> Habilidade</ul>  <!--A pessoa irá escolher dentre as três opções aquela que mais condiz com seu nível de conhecimento-->
-                  <li>Iniciante</li>
-                  <li>Intermediário</li>
-                  <li>Avançado</li>
-              </div> 
-             </div>
-          </section><!--Fim do curso de capacitação-->
+         <ul id="skill"></ul>
+       </section><!--Fim do curso de capacitação-->
 
           <section><!--Idiomas que a pessoa tem conhecimento-->
                 <div class="section-title">Idiomas</div>
                 <div>
                   <div class="idioma-container">
                     <ul> Inglês</ul><!--A pessoa irá escolher dentre as três opções aquela que mais condiz com seu nível de conhecimento-->
-                      <li>Iniciante</li>
+                      <li>Intermediário</li>
+                    <!--<li>Iniciante</li>
                       <li>Intermediário</li>
                       <li>Avançado</li>
+                      -->
                   </div> 
                  </div>
               </section><!--Fim dos idiomas-->
@@ -102,21 +82,42 @@
                             </div>
               </section><!--Fim dos Interesse Pessoais-->
                <script src="trocacor.js"></script>
-               
                <script>
-               document.getElementById('button1').addEventListener('click',loadempresa);
-                
-               function loadempresa(){
-                  var xhr=new XMLHttpRequest();
-                  xhr.open('GET','empresa.json', true);
-                  
-                  xhr.onload=function(){
-                    if(this.status == 200) {
-                      console.log(this.responseText);
+               var chamahttp = new XMLHttpRequest();
+               chamahttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var resp=JSON.parse(chamahttp.responseText);
+      var Empresas = resp.Empresas;
+      //console.log(response.Empresas);
+      var saida='';
+                  for(var i=0; i <Empresas.length;i++){
+                    saida +='<li>Nome da Empresa : '+Empresas[i].Nome+'</li>';
+                    saida +='<li>Cargo: '+Empresas[i].Cargo+'</li>';
+                    saida +='<li>Atividades desempenhadas : '+Empresas[i].Atividades+'</li>';
+                    saida +='<li>Período: '+Empresas[i].Período+'</li>';
                   }
-                }
-                xhr.send();
-                }
-            </script>
+                  document.getElementById('Empresas').innerHTML=saida;
+    }
+};
+chamahttp.open("GET", "https://demo0975162.mockable.io/empresa", true);
+chamahttp.send();
+               </script>
+               <script>
+                          var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var response=JSON.parse(xhttp.responseText);
+      var skill = response.skill;
+      var output='';
+                  for(var i=0; i <skill.length;i++){
+                    output +='<li>Nome da Habilidade : '+skill[i].Nome+'</li>';
+                    output +='<li>Nível: '+skill[i].Nível+'</li>';
+                  }
+                  document.getElementById('skill').innerHTML=output;
+    }
+};
+xhttp.open("GET", "https://demo2727820.mockable.io/habilidade", true);
+xhttp.send();
+               </script>
 </body>
 </html>
